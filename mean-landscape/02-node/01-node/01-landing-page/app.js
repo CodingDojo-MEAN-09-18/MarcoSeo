@@ -14,15 +14,15 @@ var server = http.createServer(function (request, response){
             response.end();
         });
     }
-    else if (request.url === "/ninjas") {
-         fs.readFile('ninjas.html', 'utf8', function (errors, contents){
+    else if (request.url === "/cars") {
+         fs.readFile('cars.html', 'utf8', function (errors, contents){
              response.writeHead(200, {'Content-type': 'text/html'});
              response.write(contents); 
              response.end();
          });
     }
-    else if (request.url === "/dojos/new") {
-        fs.readFile('dojonew.html', 'utf8', function (errors, contents){
+    else if (request.url === "/cars/new") {
+        fs.readFile('carsnew.html', 'utf8', function (errors, contents){
             response.writeHead(200, {'Content-type': 'text/html'});
             response.write(contents); 
             response.end();
