@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Dojo Survey</h1>
+        <br>
+        <br>
+        <br>
+        <br>
+        <form action="/result" method="POST">
+            
+            <div class="use_name">
+                Your Name: <input type="text" name="name" placeholder="Enter Your Name">
+            </div>
+            <div class="user_location">
+                Dojo Location: <select name="location" id="location">
+                    <option selected='selected'>Select Your Location</option>
+                    <option value="Tysons Corner">Tysons corner</option>
+                    <option value="New York">New York</option>
+                    <option value="Seattle">Seattle</option>
+                    <option value="Chicago">Chicago</option>
+                    <option value="Los Angeles">Los Angeles</option>
+                    <option value="Dallas">Dallas</option>
+                </select>
+            </div>
+            <div class="user_language">
+                Favorite Language: <select name="language" id="language">
+                    <option selected="selected">Select Your Favorite Language</option>
+                    <option value="HTML/CSS">HTML/CSS</option>
+                    <option value="Javascript">Javascript</option>
+                    <option value="Python">Python</option>
+                    <option value="Java">Java</option>
+                    <option value="C#">C#</option>
+                </select>
+            </div>
+            <div class="comments">
+                Comments (REQUIRED):
+                <br>
+                <textarea name="comment" cols="80" rows="20"></textarea>
+                
+            </div>
+            <br>
+            <br>
+            <input type="submit" value="submit" id="btn">
+
+
+            
+
+        </form>
+
+
+    </div>
+    
+</body>
+</html>
