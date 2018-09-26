@@ -16,8 +16,7 @@ var server = app.listen(8000, function() {
 //routiung
 app.get('/', function(req, res) {
  res.render("index");
-})
-
+});
 
 // Sockets
 

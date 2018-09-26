@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <style>
+            /* *{
+                outline: 1px dotted red;
+            } */
+            textarea{
+                vertical-align: top;
+            }
+            #btn{
+                margin-left: 10px;
+            }
+            
+            </style>
+    <title>Document</title>
+</head>
+<body class="container">
+    <div class="wrapper">
+        <h1>Welcome To Quoting Dojo</h1>
+        <% if(typeof(errors) != 'undefined'){%>
+            <% for(var err in errors){ %>
+                <p><%=errors[err].message %></p>
+            <% } %>
+        <% } %>
+
+        <form action="/" method="POST">
+        
+            <label for="name">Your Name:  </label>
+            <input type="text" name="name" placeholder="Enter Your Name">
+            <br>
+            <label for="quote">Your Quote:  </label>
+            
+            <textarea name="quote" id="textarea" cols="22" rows="3"></textarea>
+            <br>
+            <br>
+            <input id="btn" type="submit" name="addquote" value="Add my Quote!">
+        </form>
+        <a href="/result">
+            <input id="btn" type="submit" name="skipquote" value="Skip to Quotes!">
+        </a>    
+
+
+    </div>
+</body>
+</html>

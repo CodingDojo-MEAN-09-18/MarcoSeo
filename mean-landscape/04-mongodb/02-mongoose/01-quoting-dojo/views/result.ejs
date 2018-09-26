@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <style>
+            /* *{
+                outline: 1px dotted red;
+            } */
+            #name{
+                text-align: center;
+            }
+            #quote{
+                padding-left: 30px;
+            }
+            #tables{
+                border: 1px solid black;
+            }
+            #author{
+                font-weight: bolder;
+            }
+            #italic{
+                font-style: italic;
+            }
+            </style>
+</head>
+<body class="container">
+    <div class="wrapper">
+            <h1>Here are the awesome quotes!!</h1>
+            <% for (const i of userquotes) { %>
+                <div id="tables">
+
+                    <div id="quote">Quote : <span id="italic">"<%= i.quote %>"</span></div>
+                    <br>
+                    <div id="name">Name : <span id="author"><%= i.name %></span>, Created At : <%= i.createdAt %></div>
+                    <br>
+                </div>
+            <% } %>
+            <br>
+            <br>
+            <a href="/"><button>go back to home</button></a>
+    </div>
+    
+</body>
+</html>
