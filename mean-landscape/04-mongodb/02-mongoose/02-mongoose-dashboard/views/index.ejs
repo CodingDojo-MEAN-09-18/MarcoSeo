@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mongoose Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <style>
+            /* *{
+                outline: 1px dotted red;
+            } */
+            textarea{
+                vertical-align: top;
+            }
+            #btn{
+                margin-left: 10px;
+            }
+            table, tr, th{
+                padding: 10px;
+                border: 1px solid black;
+            }
+            table, tr, td{
+                padding: 10px;
+                border: 1px soild black;
+                text-align: center;
+            }
+            table, tr, td, button{
+                margin-left: 10px;
+            }
+            
+    </style>
+</head>
+<body>
+    <h1>Hi Welcome</h1>
+    <a href="/mongoose/new"><button>Create Mongoose</button></a>
+
+    <div>
+        <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Sex</th>
+                    <th>Nickname</th>
+                    <th>Action</th>
+                </tr>
+                <% for (const mongo of pets){ %>
+                <tr>
+
+                        <td><a href="/moongoose/<%= mongo._id %>"><%= mongo.name %></a></td> 
+                        <td><%= mongo.age %></td>
+                        <td><%= mongo.sex %></td>
+                        <td><%= mongo.nickname %></td>
+                        <td><a href="/mongoose/edit/<%= mongo._id %>"><button>EDIT</button></a>
+                        <a href="/mongoose/delete/<%= mongo._id %>"><button>DELETE</button></a>
+                        </td>
+                    </tr>
+                <% } %>
+        </table>
+    </div>
+
+</body>
+</html>
