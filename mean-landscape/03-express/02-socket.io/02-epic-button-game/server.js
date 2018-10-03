@@ -26,3 +26,4 @@ io.on('connection', socket => {
 function numberUpdated(number) {
     io.emit('numberUpdated', number);
 }
+

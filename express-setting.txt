@@ -21,3 +21,8 @@
 4 - npm install or i body-parser ejs socket.io
 
 5 - npm install mongoose
+
+5.1 - npm install express-session
+
+6 - npm install --save bcrypt -nodejs
+    [const bcrypt = require('bcrypt-as-promised');]

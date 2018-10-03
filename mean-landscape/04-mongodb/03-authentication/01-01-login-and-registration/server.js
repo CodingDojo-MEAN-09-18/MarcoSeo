@@ -17,7 +17,7 @@ app.set('view engine', 'ejs');
 app.set('port', port);
 
 
-mongoose.connect('mongodb://localhost:27017/login_register', {
+mongoose.connect('mongodb://localhost:27017/secrets', {
     useNewUrlParser: true
 });
 mongoose.connection.on('connected', () => console.log('MongoDB connected'));
