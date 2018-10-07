@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .msg{
+            margin-left: 20px;
+            font-weight: bolder;
+        }
+        span{
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Message Board</h1>
+    <a href="/logout">Log-out</a>
+    
+    <div>
+        <hr>
+        <span class="msg">MESSAGES  <a href="/messages/create/<%= id %>">Create New Message</a></span>
+        
+        <hr>
+        <ul>
+            <% for(const i of message){ %>
+            <li>Message : <a href="/messages/<%= i._id %>"><%= i.message %></a> 
+                
+                - Posted by <span><%= i.name %></span> <a href="/delete/<%= i._id %>">Delete</a>
+            </li> 
+            <% } %>
+
+        </ul>
+
+    </div>
+    <hr>
+    <div>
+        <a href="/edit">User Edit</a>
+        <br>
+        <a href="/logout">Log Out</a>
+
+    </div>
+</body>
+</html>

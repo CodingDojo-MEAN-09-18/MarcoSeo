@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>create message</title>
+    <style>
+    textarea{
+        vertical-align: top;
+    }
+    </style>
+</head>
+<body>
+    <h1>Create New Message</h1>
+    <a href="/logout">Log-out</a>
+    <div>
+        <form action="/create/<%= id %>" method="POST">
+            <label for="message">Message : </label>
+            <textarea name="message" id="" cols="30" rows="10"></textarea>
+            <br>
+            <br>
+            <label for="name">Name : <%= name %></label>
+            <input type="hidden" name="name" value="<%= name %>">
+
+            <!-- <input type="text" name="name" value="<%= name %>"> -->
+            <br>
+            <br>
+            <br>
+            <button>Submit</button>
+
+        </form>
+    </div>
+</body>
+</html>
