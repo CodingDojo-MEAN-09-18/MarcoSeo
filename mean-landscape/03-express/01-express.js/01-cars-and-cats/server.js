@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 5000;
 const app = express();
 
 
@@ -34,6 +34,16 @@ app.get('/cars/new', function(request, response){
 app.get('/cats', function(request, response){
     
     response.render('cats');
+})
+
+app.get('/img/cuddie', function(request, response){
+    
+    response.render('cuddie');
+})
+
+app.get('/img/wifi', function(request, response){
+    
+    response.render('wifi');
 })
 
 console.log("welcome");
