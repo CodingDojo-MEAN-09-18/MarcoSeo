@@ -1,0 +1,28 @@
+<section>
+  <fieldset>
+    <legend>Create Book</legend>
+
+    {{ form.value | json }}
+    <form (submit)='onSubmit($event, form)' #form='ngForm'>
+      <div>
+        <label for="">Title</label>
+        <input type="text" name="title" [(ngModel)]='book.title'>
+        <br>
+        <label for="">Author</label>
+        <input type="text" name="author" [(ngModel)]='book.author'>
+        <br>
+        <label for="">Year</label>
+        <input type="text" name="year" [(ngModel)]='book.year'>
+        <br>
+        <label for="">Pages</label>
+        <input type="text" name="pages" [(ngModel)]='book.pages'>
+        <br>
+        <label for="">Publisher</label>
+        <input type="text" name="publisher" [(ngModel)]='book.publisher'>
+        <br>
+        <br>
+      </div>
+      <button *ngIf='form.valid'>Submit</button>
+    </form>
+  </fieldset>
+</section>
