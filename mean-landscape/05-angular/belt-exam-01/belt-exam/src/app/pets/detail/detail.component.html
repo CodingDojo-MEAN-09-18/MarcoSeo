@@ -6,9 +6,13 @@
       <p>Type: {{ pet?.type }}</p>
       <p>Description: {{ pet?.description }}</p>
       <p>Skills: {{ pet?.skill01 }}, {{ pet?.skill02 }}, {{ pet?.skill03 }}</p>
-      <p>Likes: {{ likes }}</p>
+      <p>Likes: {{ pet?.likes }}</p>
+      <!-- <input type="hidden" name='likes' [(ngModel)]="pet.likes"> -->
 
-      <button class='btn btn-warning' [disabled]="isDisabled" (click)='liked()'>Like This Pet</button>
+      <button class='btn btn-warning' [disabled]="isDisabled" (click)='onLike(pet._id)'>Like This Pet</button>
+      <!-- <button class='btn btn-warning' [routerLink]="['/pets', 'like', pet?._id ]">Like This Pet!!</button> -->
+
+
       <button class='btn btn-warning' (click)='onDelete(pet._id)'>Adopt this Pet!</button>
     </div>
   </fieldset>

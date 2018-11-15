@@ -12,7 +12,7 @@ import { HttpService } from '../../services/http.service';
 })
 export class NewComponent implements OnInit {
   pet = new Pet();
-  errors = [];
+  errors: string[] = [];
   @Output()
   createPet = new EventEmitter<Pet>();
   constructor(

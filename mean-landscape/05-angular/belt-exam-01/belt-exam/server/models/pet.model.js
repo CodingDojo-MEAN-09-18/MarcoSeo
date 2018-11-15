@@ -26,6 +26,7 @@ const PetSchema = new Schema({
   skill01: String,
   skill02: String,
   skill03: String,
+  likes: Number,
 }, {
   timestamps: true,
 });

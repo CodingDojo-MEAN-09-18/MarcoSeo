@@ -26,13 +26,37 @@ module.exports = {
   create(request, response) {
     console.log("request.body", request.body)
     Pet.create(request.body)
-      .then(pet => response.json(pet))
-      .catch(error => {
-        const errors = Object.keys(error.errors).map(key => error.errors[key].message)
+      .then(() => {
+        Pet.findOneAndUpdate({
+            name: request.body.name
+          }, {
+            $set: {
+              likes: 0
+            }
+          }, (err) => {
+            if (err) {
+              console.log("you missed LIKES database")
+            }
+          })
+          .then(pet => response.json(pet))
+          .catch(error => {
+            const errors = Object.keys(error.errors).map(key => error.errors[key].message)
 
-        response.status(402).json(errors);
-      });
+            response.status(402).json(errors);
+          });
+      })
   },
+  // 이게 기본 포스트 create
+  // create(request, response) {
+  //   console.log("request.body", request.body)
+  //   Pet.create(request.body)
+  //     .then(pet => response.json(pet))
+  //     .catch(error => {
+  //       const errors = Object.keys(error.errors).map(key => error.errors[key].message)
+
+  //       response.status(402).json(errors);
+  //     });
+  // },
 
   // update resource
   update(request, response) {
@@ -44,24 +68,19 @@ module.exports = {
       .then(pet => response.json(pet))
       .catch(console.log)
   },
-  // update(request, response) {
-  //   Pet.findById(request.params.pet_id, function (err, pet) {
-  //       if (err)
-  //         response.send(err);
-  //       pet.name = request.body.name;
-  //       pet.type = request.body.type;
-  //       pet.description = request.body.description;
-  //       pet.skill01 = request.body.skill01;
-  //       pet.skill02 = request.body.skill02;
-  //       pet.skill03 = request.body.skill03;
-  //       pet.save();
-  //       response.json({
-  //         message: 'updated!'
-  //       })
 
-  //     }
-  //   }
+  // Like button
 
+  like(request, response) {
+    console.log('request_params_pet_id', request.params.pet_id)
+    Pet.findById(request.params.pet_id)
+      .then((pet) => {
+        pet.likes = pet.likes += 1
+        pet.save()
+        console.log("GOT a like!!", pet.likes)
+        response.json(pet)
+      })
+  },
 
 
   // delete/remove resource

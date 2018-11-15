@@ -24,6 +24,12 @@ const routes: Routes = [
         path: 'edit/:pet_id',
         component: fromPets.EditComponent,
       },
+      // {
+      //   path: 'like/:pet_id',
+      //   component: fromPets.DetailComponent,
+      //   // redirectTo: ':pet_id',
+      //   // pathMatch: 'full',
+      // },
       {
         path: ':pet_id',
         component: fromPets.DetailComponent,

@@ -6,4 +6,5 @@ export class Pet {
   skill01: string;
   skill02: string;
   skill03: string;
+  likes: 0;
 }

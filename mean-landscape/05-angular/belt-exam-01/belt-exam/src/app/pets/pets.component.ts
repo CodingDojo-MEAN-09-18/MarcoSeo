@@ -28,11 +28,11 @@ export class PetsComponent implements OnInit {
     });
   }
 
-  onSelect(pet: Pet): void {
-    console.log('Selecting.....', pet);
-    // this is simple version of if statement        true : false
-    this.selectedPet = this.selectedPet === pet ? null : pet;
-  }
+  // onSelect(pet: Pet): void {
+  //   console.log('Selecting.....', pet);
+  //   // this is simple version of if statement        true : false
+  //   this.selectedPet = this.selectedPet === pet ? null : pet;
+  // }
 
   onCreate(pet: Pet): void {
     console.log('creating pet', pet);

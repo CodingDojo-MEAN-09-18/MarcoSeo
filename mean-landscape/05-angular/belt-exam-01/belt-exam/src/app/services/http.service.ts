@@ -21,6 +21,7 @@ export class HttpService {
   getPets(): Observable<Pet[]> {
     return this.http.get<Pet[]>(this.base);
   }
+
   getPet(id: string): Observable<Pet> {
     return this.http.get<Pet>(`${this.base}/${id}`);
   }
@@ -33,10 +34,16 @@ export class HttpService {
   editPet(id: number, callback): Observable<Pet> {
     return this.http.put<Pet>(`${this.base}/${id}`, callback);
   }
+
   createPet(pet: Pet): Observable<Pet> {
     return this.http.post<Pet>(this.base, pet);
   }
+
   deletePet(id: number): Observable<Pet> {
     return this.http.delete<Pet>(`${this.base}/${id}`);
+  }
+
+  likePet(id: number, callback): Observable<Pet> {
+    return this.http.put<Pet>(`${this.base}/${id}/like`, callback);
   }
 }

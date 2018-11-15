@@ -15,11 +15,12 @@ import { HttpService } from '../../services/http.service';
   styleUrls: ['./detail.component.css'],
 })
 export class DetailComponent implements OnInit {
-  // @Input()
+  @Input()
   pet: Pet;
   pets: Pet[] = [];
   likes: any = 0;
   isDisabled: boolean;
+
   constructor(
     private readonly httpSerivce: HttpService,
     private readonly route: ActivatedRoute,
@@ -34,9 +35,18 @@ export class DetailComponent implements OnInit {
       )
       .subscribe(pet => (this.pet = pet));
   }
-  liked() {
-    this.likes = parseInt(this.likes, 0) + 1;
-    this.isDisabled = this.likes === 1;
+  // liked() {
+  //   this.likes++;
+  // }
+  onLike(pet_id, liked) {
+    console.log(pet_id);
+    // console.log('liking liking~');
+    this.httpSerivce.likePet(pet_id, liked).subscribe(() => {
+      this.pet.likes++;
+      this.likes++;
+      console.log(this.likes);
+      this.isDisabled = this.likes === 1;
+    });
   }
   onDelete(id: number) {
     console.log('Deleting pet');
